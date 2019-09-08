@@ -40,14 +40,24 @@ int Intstack::pop() {
     return popval;
 }
 
-int Intstack::peak() {
+int Intstack::peek() {
+    int peekval = 0;
 
-    return 0;
+    if(top < 0) {
+        throw -1;
+    } else {
+        peekval = stack[top];
+    }
+
+    return peekval;
 }
 
 bool Intstack::isEmpty() {
-
-    return true;
+    if(top == -1){
+        return true;
+    } else {
+        return false;
+    }
 }
 
 void Intstack::dumpStack(){

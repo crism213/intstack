@@ -18,7 +18,7 @@ public:
     ~Intstack();
 
     int pop();
-    int peak();
+    int peek();
     bool push(int x);
     bool isEmpty();
 
