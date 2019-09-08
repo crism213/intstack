@@ -8,6 +8,8 @@
 
 #define STACKSIZE 10
 
+#include <iostream>
+
 class Intstack {
 
 public:
@@ -19,6 +21,10 @@ public:
     int peak();
     bool push(int x);
     bool isEmpty();
+
+    // this is a programmer debug routine
+    // DO NOT LEAVE THIS IN PRODUCTION CODE
+    void dumpStack();
 
 private:
 
