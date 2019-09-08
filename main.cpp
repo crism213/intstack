@@ -7,7 +7,19 @@
 
 int main() {
 
-    Intstack stack1;
+    Intstack stack;
+
+    //testing filling the stack and overflow
+    for(int i=0; i<STACKSIZE+4; i++){
+        if(stack.push(i+1)){
+            cout << "yay! " << i+1 << endl;
+        } else {
+            cout << "boo " << i+1 << endl;
+        }
+    }
+
+    //programmer debug routine
+    stack.dumpStack();
 
     return 0;
 }
