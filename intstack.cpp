@@ -29,8 +29,15 @@ bool Intstack::push(int i) {
 }
 
 int Intstack::pop() {
+    int popval = 0;
 
-    return 0;
+    if(top < 0) {
+        throw -1;
+    } else {
+        popval = stack[top--];
+    }
+
+    return popval;
 }
 
 int Intstack::peak() {
@@ -44,8 +51,9 @@ bool Intstack::isEmpty() {
 }
 
 void Intstack::dumpStack(){
-
-    for(int i=0; i<STACKSIZE; i++){
+    std::cout << "dumping whole stack" << std::endl;
+    for(int i=0; i<=top; i++){
         std::cout << stack[i] << std::endl;
     }
+    std::cout << std::endl;
 }
