@@ -19,19 +19,52 @@ int main() {
     }
     cout << endl;
 
+    //testing isEmpty()
+    if(stack.isEmpty()){
+        cout << "stack is empty" << endl;
+    } else {
+        cout << "stack is NOT empty" << endl;
+    }
+    cout << endl;
+
+    //testing peeking
+    try {
+        cout << "peeked: " << stack.peek() << endl;
+    } catch (...) {
+        cout << "failed" << endl;
+    }
+    cout << endl;
+
     //programmer debug routine
     stack.dumpStack();
 
+    //testing popping whole stack
     for(int i=0; i<STACKSIZE+4; i++){
         try {
             cout << "popped: " << stack.pop() << endl;
         } catch (...) {
-            cout << "failed: " << endl;
+            cout << "failed" << endl;
         }
     }
     cout << endl;
 
     stack.dumpStack();
+
+    //testing peeking
+    try {
+        cout << "peeked: " << stack.peek() << endl;
+    } catch (...) {
+        cout << "failed" << endl;
+    }
+    cout << endl;
+
+    //testing isEmpty()
+    if(stack.isEmpty()){
+        cout << "stack is empty" << endl;
+    } else {
+        cout << "stack is NOT empty" << endl;
+    }
+    cout << endl;
 
 
     return 0;
