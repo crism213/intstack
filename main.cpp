@@ -12,14 +12,27 @@ int main() {
     //testing filling the stack and overflow
     for(int i=0; i<STACKSIZE+4; i++){
         if(stack.push(i+1)){
-            cout << "yay! " << i+1 << endl;
+            cout << "pushed: " << i+1 << endl;
         } else {
-            cout << "boo " << i+1 << endl;
+            cout << "failed: " << i+1 << endl;
         }
     }
+    cout << endl;
 
     //programmer debug routine
     stack.dumpStack();
+
+    for(int i=0; i<STACKSIZE+4; i++){
+        try {
+            cout << "popped: " << stack.pop() << endl;
+        } catch (...) {
+            cout << "failed: " << endl;
+        }
+    }
+    cout << endl;
+
+    stack.dumpStack();
+
 
     return 0;
 }
