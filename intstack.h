@@ -8,6 +8,7 @@
 
 #define STACKSIZE 10
 
+//included only for programmer debug
 #include <iostream>
 
 class Intstack {
@@ -28,7 +29,7 @@ public:
 
 private:
 
-    int top;
+    int top;  //do not initialize here, that's what the constructor is for
     int stack[STACKSIZE];
 
 };

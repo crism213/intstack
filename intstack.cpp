@@ -20,6 +20,9 @@ Intstack::~Intstack() {
 }
 
 bool Intstack::push(int i) {
+    /* this is using two returns. okay here because
+     * the function is simple and it's a boolean return
+     */
     if(top >= STACKSIZE-1)  {
         return false;
     } else {
@@ -29,9 +32,10 @@ bool Intstack::push(int i) {
 }
 
 int Intstack::pop() {
-    int popval = 0;
+    int popval = 0; //this init is useless but good practice
 
     if(top < 0) {
+        //throw an int because we cannot return one
         throw -1;
     } else {
         popval = stack[top--];
@@ -41,9 +45,10 @@ int Intstack::pop() {
 }
 
 int Intstack::peek() {
-    int peekval = 0;
+    int peekval = 0; //this init is useless but good practice
 
     if(top < 0) {
+        //throw an int because we cannot return one
         throw -1;
     } else {
         peekval = stack[top];
@@ -53,6 +58,9 @@ int Intstack::peek() {
 }
 
 bool Intstack::isEmpty() {
+    /* this is using two returns. okay here because
+     * the function is simple and it's a boolean return
+     */
     if(top == -1){
         return true;
     } else {
@@ -61,6 +69,8 @@ bool Intstack::isEmpty() {
 }
 
 void Intstack::dumpStack(){
+    // this is a programmer debug routine
+    // DO NOT LEAVE THIS IN PRODUCTION CODE
     std::cout << "dumping whole stack" << std::endl;
     for(int i=0; i<=top; i++){
         std::cout << stack[i] << std::endl;
